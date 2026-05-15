@@ -19,7 +19,7 @@ export const getDetaill = async(pid) => {
        info,
        rate,
        concat('/images/',image)as image,
-       img_list
+       img_list as imgList
     from product 
     where pid=?;   
     `
