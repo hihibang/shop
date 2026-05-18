@@ -5,12 +5,12 @@ import { FaLock } from 'react-icons/fa';
 import { useAuthStore } from '@/store/authStore.js';
 
 export default function Login() {
-  const navigate = useNavigate(); //페이지 이동
+  const navigate = useNavigate();
   const idRef = useRef(null);
   const pwdRef = useRef(null);
   const [formData, setFormData] = useState({ id: '', pwd: '' });
   const [errors, setErrors] = useState({ id: '', pwd: '' });
-  const login = useAuthStore((s) => s.login); //전체 스토어에 개시 > 필요한 기능 가져다 씀.
+  const login = useAuthStore((s) => s.login);
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;

@@ -1,20 +1,25 @@
 import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import productRouter from './routes/products.js'
+import productsRouter from './routes/products.js';
+import returnRouter from './routes/return.js';
+import signupRouter from './routes/signup.js';
 
-dotenv.config()
+dotenv.config();
 
-const app = express();
 const PORT = process.env.SERVER_PORT || 9000;
+const app = express();
 
-//미들웨어 -> 공동작업 처리
+//미들웨어 -> 공통작업 정의
 app.use(cors());
-app.use(express.json())
+app.use(express.json());
 
-//라우터 
-app.use('/products', productRouter)
+//라우팅 작업
+app.use('/products', productsRouter);
+app.use('/return', returnRouter);
+app.use('/signup', signupRouter);
 
-app.listen(PORT, ()=>{
-    console.log(`🚀 Server => ${PORT}`);
-})
+
+app.listen(PORT, () => {
+    console.log(`서버 실행 => ${PORT}`);    
+});

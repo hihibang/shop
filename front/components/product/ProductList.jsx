@@ -11,8 +11,7 @@ export default function ProductList() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const products = await axiosGet('/products');
-        // const jsonData = await res.json();
+        const products = await axiosGet('/products'); 
         setProductList(groupByRows(products, number));
       } catch (error) {
         console.error('상품 목록을 불러오는 중 오류 발생:', error);
