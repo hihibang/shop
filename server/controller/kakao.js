@@ -24,7 +24,8 @@ export const getReady = async(req, res, next) => {
             "total_amount": totalAmount,
             "vat_amount": 0,
             "tax_free_amount": 0,
-            "approval_url": "http://192.168.20.79:9000 v/kakao/approve",  //카카오에서 redirection url
+            // "approval_url": "http://192.168.20.79:9000 v/kakao/approve",  //카카오에서 redirection url
+            "approval_url": `https://scoreless-overlying-numeric.ngrok-free.dev/kakao/approve?partner_order_id=${orderId}`,  //카카오에서 redirection url
             "fail_url": "http://192.168.20.79:3000/fail",
             "cancel_url": "http://192.168.20.79:3000/cancel"
         }
