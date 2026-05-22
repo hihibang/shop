@@ -3,7 +3,9 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import productsRouter from './routes/products.js';
 import returnRouter from './routes/return.js';
-import signupRouter from './routes/signup.js';
+import memberRouter from './routes/member.js';
+import cartsRouter from './routes/carts.js';
+import kakaoRauter from './routes/kakao.js'
 
 dotenv.config();
 
@@ -17,7 +19,9 @@ app.use(express.json());
 //라우팅 작업
 app.use('/products', productsRouter);
 app.use('/return', returnRouter);
-app.use('/signup', signupRouter);
+app.use('/member', memberRouter);
+app.use('/carts', cartsRouter);
+app.use('/kakao', kakaoRauter)
 
 
 app.listen(PORT, () => {
