@@ -56,6 +56,10 @@ export default function Checkout() {
       if(tid) {
         setQrUrl(next_redirect_mobile_url);
         setShowModal(true);
+
+        setTimeout(()=>{
+          setShowModal(false)
+        }, 10000)
       }
       
     } catch(error) {
